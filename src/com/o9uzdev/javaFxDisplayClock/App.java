@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
+        ClockPane clock = new ClockPane();
+        
         Pane root = new Pane();
         String timeString = "00:00:00";
         Label lblTime = new Label(timeString);
