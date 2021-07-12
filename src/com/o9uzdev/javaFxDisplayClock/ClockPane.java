@@ -8,7 +8,6 @@ public class ClockPane extends Pane {
     private int second;
 
     public ClockPane(){
-        getTimeString();
     }
 
     public ClockPane(int hour, int minute, int second) {
@@ -17,7 +16,15 @@ public class ClockPane extends Pane {
         this.second = second;
     }
 
-    public String getTimeString(){
-        return "";
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public int getSecond() {
+        return second;
     }
 }
