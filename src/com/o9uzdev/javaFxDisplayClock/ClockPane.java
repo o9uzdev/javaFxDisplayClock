@@ -1,4 +1,5 @@
 package com.o9uzdev.javaFxDisplayClock;
+
 import javafx.scene.Group;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -13,7 +14,7 @@ public class ClockPane extends Pane {
     private int minute;
     private int second;
 
-    public ClockPane(){
+    public ClockPane() {
         setCurrentTime();
     }
 
@@ -50,7 +51,7 @@ public class ClockPane extends Pane {
         paintClock();
     }
 
-    private void setCurrentTime(){
+    private void setCurrentTime() {
         LocalDateTime now = LocalDateTime.now();
         hour = now.getHour();
         minute = now.getMinute();
@@ -58,21 +59,28 @@ public class ClockPane extends Pane {
         paintClock();
     }
 
-    public String getTimeString(){
+    public String getTimeString() {
         return "";
     }
 
-    private void paintClock(){
+    private void paintClock() {
         double clockRadius = Math.min(getHeight(), getWidth()) * 0.5 * 0.8;
-        double centerX = getWidth()/2;
-        double centerY = getHeight()/2;
+        double centerX = getWidth() / 2;
+        double centerY = getHeight() / 2;
 
         Circle circle = new Circle(centerX, centerY, clockRadius);
         circle.setFill(Color.WHITE);
         circle.setStroke(Color.BLACK);
 
+        Text t1 = new Text(centerX - 5, centerY - clockRadius + 15, "12");
+        Text t2 = new Text(centerX - clockRadius + 5, centerY + 5, "9");
+        Text t3 = new Text(centerX + clockRadius - 10, centerY + 5, "3");
+        Text t4 = new Text(centerX - 5, centerY + clockRadius - 5, "6");
+        Group textGroup = new Group();
+        textGroup.getChildren().addAll(t1, t2, t3, t4);
+
         getChildren().clear();
-        getChildren().addAll(circle);
+        getChildren().addAll(circle, textGroup);
     }
 
     @Override
