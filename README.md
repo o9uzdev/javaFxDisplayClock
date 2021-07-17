@@ -1,6 +1,6 @@
 # JavaFX Display Clock
 
-This is JavaFX Display Clock project.
+This is repository contains JavaFX Display Clock project codes.
 
 ![image](img/image.jpg)
 
