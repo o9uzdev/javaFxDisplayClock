@@ -5,7 +5,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -13,9 +12,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         //Create the clock and a label
         ClockPane clock = new ClockPane();
-        String timeString = clock.getHour() + ":" + clock.getMinute()
-                + ":" + clock.getSecond();
-        Label lblTime = new Label(timeString);
+        Label lblTime = new Label(clock.getTimeString());
 
         // Place clock and label in border pane
         BorderPane pane = new BorderPane();

@@ -60,8 +60,7 @@ public class ClockPane extends Pane {
     }
 
     public String getTimeString() {
-        return clock.getHour() + ":" + clock.getMinute()
-                + ":" + clock.getSecond();
+        return getHour() + ":" + getMinute() + ":" + getSecond();
     }
 
     private void paintClock() {
